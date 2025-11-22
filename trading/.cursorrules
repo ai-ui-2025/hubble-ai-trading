@@ -1,0 +1,103 @@
+# TradingAgents Architecture Guidelines
+
+> Core principles for an autonomous AI cryptocurrency trading system.
+
+!Important: 
+1. Use English in code file like comment instead of chinese. 
+2. NEVER generate documentation files (*.md) or usage guides. Only create documentation if explicitly requested by the user. 
+
+---
+
+## Vision
+
+**Fully autonomous AI agents that analyze, decide, and execute trades without human intervention.**
+
+---
+
+## Project lib
+Use langgraph, uv, loguru
+
+## Core Principles
+
+### 1. Agent-Centric Architecture
+Agents are first-class citizens. They interact with the system through tools, not direct function calls. This enables autonomy, traceability, and intelligent decision-making.
+
+### 2. Complete Closed-Loop
+The entire cycle (analysis → decision → execution) happens within the agent graph. External code only schedules and monitors; it doesn't participate in trading logic.
+
+### 3. Clear Separation of Concerns
+- **Analysis**: Gather data and insights (read-only)
+- **Decision**: AI reasoning and planning
+- **Safety**: Non-negotiable guardrails (deterministic)
+- **Execution**: Reliable trade execution
+
+Each layer complements the others without conflict.
+
+### 4. Structured Communication
+AI outputs are structured data (Pydantic models), never free text requiring parsing.
+
+### 5. State-Based Integration
+New features integrate through shared state and tools within the graph flow. No isolated, standalone functionality.
+
+---
+
+## Tool Registration Pattern
+
+**Three-Step Rule for Adding Tools:**
+
+1. **Define with `@tool` decorator** → Returns JSON string
+2. **Register in graph runner** → Import + add to central tool registry  
+3. **Bind in agent** → Import locally + pass to LLM
+
+**Common Error:**
+```
+Error: "X is not a valid tool, try one of [...]"
+```
+**Fix:** Tool was created but not registered in the central tool registry.
+
+**Key Principle:** Tools must be registered globally (graph runner) AND locally (agent nodes). Missing either registration breaks the tool chain.
+
+---
+
+## Guiding Questions
+
+When making decisions, ask:
+
+1. **Does this preserve agent autonomy?**
+2. **Is the complete loop within the graph?**
+3. **Are boundaries clear and complementary?**
+4. **Is communication structured and type-safe?**
+5. **Does this integrate globally via state/tools?**
+
+If any answer is no, reconsider.
+
+---
+
+## Anti-Patterns
+
+- Executing trades outside the agent graph
+- Creating features that bypass the graph
+- Parsing AI output as text
+- Scattering mode conditionals throughout code
+- Building isolated systems without integration
+
+---
+
+## Philosophy
+
+**Architecture enables intelligence, not constrains it.**
+
+Provide structure within which agents operate autonomously. Favor:
+- Autonomy over control
+- Consistency over local optimization
+- Integration over isolation
+- Structure over rules
+
+--- 
+
+# Project 
+
+use uv as dependency tool
+
+*Good architecture is invisible—it just makes sense.*
+

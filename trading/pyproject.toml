@@ -1,0 +1,43 @@
+[project]
+name = "tradingagents"
+version = "0.1.0"
+description = "Autonomous AI-powered cryptocurrency trading system"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # Core LLM and Agent Framework
+    "langchain-core>=0.3.0",
+    "langchain-openai>=0.3.23",
+    "langchain-anthropic>=0.3.15",
+    "langchain-google-genai>=2.1.5",
+    "langchain-experimental>=0.3.4",
+    "langgraph>=0.4.8",
+    "pydantic>=2.0.0",
+    "typing-extensions>=4.14.0",
+    # Data Processing
+    "pandas>=2.3.0",
+    "pytz>=2025.2",
+    "requests>=2.32.4",
+    "tqdm>=4.67.1",
+    "pyyaml>=6.0.0",
+    # Cryptocurrency Data Sources
+    "ccxt>=4.5.12",
+    "python-dotenv>=1.0.0",
+    # Database and Storage (for agent memory)
+    "chromadb>=1.0.12",
+    # Development Tools
+    "setuptools>=80.9.0",
+    "loguru>=0.7.3",
+    "schedule>=1.2.2",
+    "pandas-ta>=0.4.71b0",
+    "apscheduler>=3.11.0",
+    "langgraph-checkpoint>=2.0.26",
+    "langgraph-checkpoint-sqlite>=2.0.5",
+    # Agent0 SDK (for ERC-8004 discovery)
+    "agent0-sdk>=0.31",
+    # A2A Protocol SDK (official client)
+    "a2a-sdk>=0.1.0",
+    # X402 Payment Protocol (for A2A agent payments)
+    "x402>=0.1.0",
+    "eth-account>=0.13.0",
+]

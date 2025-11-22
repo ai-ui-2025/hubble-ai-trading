@@ -1,0 +1,34 @@
+# Core LLM and Agent Framework
+langchain-core
+langchain-openai
+langchain-anthropic
+langchain-google-genai
+langchain-experimental
+langgraph
+pydantic>=2.0.0
+typing-extensions
+pyyaml  # YAML configuration files
+
+# Data Processing
+pandas
+pandas-ta>=0.3.14  # Technical indicators library
+numpy>=1.20.0
+pytz
+requests
+tqdm
+
+# Cryptocurrency Data Sources
+ccxt  # CCXT for Binance and other exchanges
+python-dotenv  # Environment variables
+
+# Database and Storage
+chromadb  # Vector database for agent memory
+
+# Logging
+loguru  # Advanced logging with file rotation
+
+# Scheduling
+APScheduler>=3.10.0  # Advanced job scheduling
+
+# Development Tools
+setuptools
