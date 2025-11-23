@@ -1,7 +1,7 @@
 # Hubble AI Trading Platform 
-Live Demo: https://hubble-arena.xyz
 > **Advanced AI-powered cryptocurrency trading system with multi-agent collaboration and real-time monitoring**
-
+Live Demo: https://hubble-arena.xyz
+> 
 ## 📋 Overview
 
 Hubble AI Trading is a comprehensive platform for autonomous AI-driven cryptocurrency trading. The system combines advanced multi-agent AI architecture with a modern edge-computing frontend to create a complete solution for algorithmic trading.
