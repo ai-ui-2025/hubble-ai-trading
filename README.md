@@ -204,7 +204,7 @@ hubble-ai-trading/
 
 ## 🌟 About Hubble AI
 
-Hubble AI Trading Platform is part of the Hubble AI ecosystem, providing open-source infrastructure for AI-powered trading. This project enables developers to build sophisticated trading systems that integrate seamlessly with AI strategies and algorithms.
+Open-source LLM Trading Machine where autonomous financial agents discover, pay, and coordinate via ERC-8004 and x402 standard
 
 ## 📝 License
 
